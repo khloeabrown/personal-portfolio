@@ -1,0 +1,220 @@
+/* ===== 3.1 Primary Layout Style - Home Page ============================ */
+main {
+	.section-style {
+		@include flexbox(row,space-between,1vh,0);
+		align-items: flex-start;
+		width: auto;
+		margin: 0 20vw;
+		text-align: justify;
+		border-top: 1px solid #000;
+		.title {
+			width: 24%;
+		}
+		.content {
+			width: 75%;
+		}
+	}
+	#about {
+		padding-top: 7vh;
+		.inner {
+			@extend .section-style;
+		}
+	}
+	#abilities {
+		padding-top: 7vh;
+		.inner {
+			@extend .section-style;
+			.ability {
+				p { padding: 0; }
+				.abilities__list {
+					@include flexbox(row,flex-start,0,0);
+					span {
+						margin-right: 0.5em;
+						padding: 0.33em 1.33em;
+						background-color: $color-dark;
+						color: $color-absolute-white;
+						font-size: 0.95em;
+						border-radius: 5px;
+					}
+				}
+				&:first-child {
+					margin-bottom: 2em;
+				}
+			}
+		}
+	}
+	#projects {
+		padding-top: 7vh;
+		.inner {
+			@extend .section-style;
+			#projects__container {
+				.projects__block {
+					padding-left: 1em;
+					border-left: 1px solid $color-absolute-black;
+					.description {
+						padding-bottom: 0;
+					}
+					.projects__btns {
+						@include flexbox(row,space-between,0,0);
+						width: 25%;
+						margin-bottom: 1.5em;
+					}
+				}
+			}
+		}
+	}
+	#contact {
+		padding-top: 7vh;
+		.inner {
+			@extend .section-style;
+			#contact__form {
+				margin-top: 0.5em;
+				.form__span {
+					@include flexbox(row,space-between,0,0);
+					align-items: flex-start;
+					position: relative;
+					min-height: 5vh;
+					label {width: 20%;}
+					input, textarea {
+						margin-bottom: 1em;
+						padding: 0.5em;
+						width: 80%;
+						border: 1px solid $color-light-grey;
+						&[type=submit] {
+							position: absolute;
+							bottom: 0;
+							right: 0;
+							width: 25%;
+							background-color: $color-dark;
+							color: $color-absolute-white;
+							border: none;
+							transition: background-color 0.3s ease-in-out;
+							&:hover {
+								background-color: $color-absolute-black;
+								cursor: pointer;
+							}
+						}
+					}
+					&:last-child {
+						margin-top: 0.5em;
+						padding-top: 4em;
+						border-top: 1px solid $color-absolute-black;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* ===== 3.1.1 Responsive Layout - SM Devices ============================ */
+@media screen and (max-width: 768px) {
+	main {
+		.section-style {
+			@include flexbox(column,space-between,1vh,0);
+			align-items: flex-start;
+			width: auto;
+			margin: 0 7vw;
+			text-align: justify;
+			border-top: 1px solid #000;
+			.title {
+				width: 100%;
+			}
+			.content {
+				width: 100%;
+			}
+		}
+		#abilities {
+			.inner {
+				.ability {
+					.abilities__list {
+						flex-wrap: wrap;
+						span {
+							min-width: calc(100%/2.1);
+							margin-top: 0.5em;
+							text-align: center;
+						}
+					}
+				}
+			}
+		}
+		#projects {
+			.inner {
+				#projects__container {
+					.projects__block {
+						border-left: 2px solid $color-absolute-black;
+						.projects__btns {
+							@include flexbox(column,space-between,0,0);
+							align-items: flex-start;
+						}
+					}
+				}
+			}
+		}
+		#contact {
+			.inner {
+				#contact__form {
+					.form__span {
+						@include flexbox(column,space-between,0,0);
+						label {width: 100%;}
+						input, textarea {
+							padding: 0.75em;
+							width: 100%;
+							&[type=submit] {
+								left: 0;
+								width: 100%;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* ===== 3.1.2 Responsive Layout - MD Devices ============================ */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+	main {
+		.section-style {
+			@include flexbox(row,space-between,1vh,0);
+			align-items: flex-start;
+			width: auto;
+			margin: 0 10vw;
+			text-align: justify;
+			border-top: 1px solid #000;
+			.title {
+				width: 24%;
+			}
+			.content {
+				width: 75%;
+			}
+		}
+		#abilities {
+			.inner {
+				.ability {
+					p { padding: 0; }
+					.abilities__list {
+						@include flexbox(row,flex-start,0,0);
+						span {
+							margin-right: 0.5em;
+							padding: 0.33em 1.33em;
+							background-color: $color-dark;
+							color: $color-absolute-white;
+							font-size: 0.95em;
+							border-radius: 5px;
+						}
+					}
+					&:first-child {
+						margin-bottom: 2em;
+					}
+				}
+			}
+		}
+		#projects {
+			.inner {
+				#projects__container {
+					.projects__block { border-left: 1px solid $color-absolute-black; }
+				}
+			}
+		}
+	}
+}

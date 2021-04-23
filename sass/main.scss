@@ -1,0 +1,39 @@
+/* =================================================
+STYLESHEET INFORMATION
+	Project:    Personal Portfolio
+	Client:     Myself
+	Author:     Khloe A. Brown
+	Version:    v1.0
+	Created:    APR-14-2021
+	Modified:   APR-22-2021
+	
+TABLE OF CONTENTS
+	1. Global Document Reset Styles
+	2. Typography Styles
+	3. Primary Layout Style - Home Page
+		3.1 Responsive Layout - Small Devices
+		3.2 Responsive Layout - Medium Devices
+	4.1 Secondary Layout Style - Header
+		4.1.1 Responsive Layout - Small Devices
+	4.2 Secondary Layout Style - Footer
+		4.2.1 Responsive Layout - Small Devices
+	5.1 Component Style - Buttons
+	5.2 Component Style - Scroll Top Button
+================================================== */
+
+// ABSTRACTS
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+// GLOBAL STYLES
+@import 'base/reset';
+@import 'base/typography';
+
+// LAYOUT STYLES
+@import 'pages/home';
+@import 'layout/header';
+@import 'layout/footer';
+
+// COMPONENT STYLES
+@import 'components/buttons';
+@import 'components/scroll-top';

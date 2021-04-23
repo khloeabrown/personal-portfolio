@@ -1,0 +1,24 @@
+/* ===== 4.2 Secondary Layout Style - Footer ============================= */
+footer {
+    @include flexbox(row,space-between,0,0);
+    width: auto;
+    margin: 5vh 20vw 3vh;
+    padding: 3vh 0 1vh 0;
+	border-bottom: 1px solid #000;
+    #footer__social {
+        margin-right: -5px;
+        a { padding: 0 5px; }
+    }
+}
+
+/* ===== 4.2.1 Responsive Layout - SM Devices ============================ */
+@media screen and (max-width: 768px) {
+	footer {
+        @include flexbox(column,space-between,0,0);
+        align-items: flex-start;
+        width: auto;
+        margin: 5vh 5vw 3vh;
+        padding: 3vh 0 2vh 0;
+        #footer__social { margin-left: -5px; }
+    }
+}

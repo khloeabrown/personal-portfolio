@@ -1,0 +1,35 @@
+/* ===== 5.2 Component Style - Scroll Top Button ==== */
+#btn__scroll-top {
+	position: fixed;
+	bottom: 1.5rem;
+	right: 1.5rem;
+	transition: all 0.3s ease;
+	svg {
+		width: 2.25rem;
+		.btn__background {
+            fill: $color-primary;
+            transition: fill 0.3s ease-in-out;
+        }
+		.btn__content {
+            fill: $color-absolute-white;
+            transition: fill 0.3s ease-in-out;
+        }
+	}
+	&:hover {
+		bottom: 2.5rem;
+		cursor: pointer;
+		svg {
+			.btn__background { fill: $color-light; }
+			.btn__content { fill: $color-primary-dark; }
+		}        
+	}
+}
+
+/* ===== 5.2.1 Responsive Layout - XLG Devices ========= */
+@media screen and (min-width: 2560px) {
+    #btn__scroll-top {
+        svg {
+            width: 3rem;
+        }
+    }
+}
